@@ -12,6 +12,13 @@ value_sex=np.array((file_data_frame["sex"].value_counts(normalize=True).values*1
 # print(value_sex)
 
 
-plt.pie(value_sex,labels=label_sex,autopct='%1.1f%%')
-plt.title("chart of tips by sex: ")
+# plt.pie(value_sex,labels=label_sex,autopct='%1.1f%%')
+# plt.title("chart of tips by sex: ")
+
+
+label_day=file_data_frame.day.value_counts().keys()
+value_day=file_data_frame.day.value_counts()
+
+plt.bar(label_day,value_day)
+
 plt.show()
