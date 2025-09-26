@@ -52,3 +52,17 @@ import numpy as np
 
 # plt.show()
 
+# __________________________________________________________
+# pow chart
+
+x = list(range(-10, 11))
+y = np.multiply(x, x)
+
+plt.style.use("ggplot")
+plt.grid(True)
+plt.title("X^2=y")
+# print(plt.style.available[0:10])
+
+plt.plot(x,y)
+
+plt.show()
