@@ -92,3 +92,152 @@ df.loc[df['score'] > 80, 'name']
 
 ---
 
+
+---
+
+# 🔹 مرحله ۰ — نصب و وارد کردن
+
+```bash
+pip install matplotlib
+```
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+`pyplot` همون ماژولیه که بیشتر کار رسم رو انجام میده.
+
+---
+
+# 🔹 مرحله ۱ — اولین نمودار ساده
+
+```python
+x = [1,2,3,4,5]
+y = [2,4,6,8,10]
+
+plt.plot(x, y)         # رسم خطی
+plt.title("Simple Line Plot")   # عنوان
+plt.xlabel("X axis")   # برچسب محور X
+plt.ylabel("Y axis")   # برچسب محور Y
+plt.show()             # نمایش
+```
+
+---
+
+# 🔹 مرحله ۲ — استایل و رنگ‌ها
+
+```python
+plt.plot(x, y, color='red', linestyle='--', marker='o')
+```
+
+* `color='red'` یا `'r'`
+* `linestyle='--'` (خط چین)
+* `marker='o'` (دایره برای نقاط)
+
+---
+
+# 🔹 مرحله ۳ — چند نمودار روی هم
+
+```python
+y2 = [1,4,9,16,25]
+plt.plot(x, y, label='Linear')
+plt.plot(x, y2, label='Quadratic')
+plt.legend()   # نمایش راهنما (legend)
+plt.show()
+```
+
+---
+
+# 🔹 مرحله ۴ — انواع نمودار
+
+### 📊 نمودار میله‌ای (Bar)
+
+```python
+langs = ['Python','C','Java','C++']
+pop = [50,30,40,20]
+
+plt.bar(langs, pop, color='skyblue')
+plt.title("Bar Chart")
+plt.show()
+```
+
+### 🍩 نمودار دایره‌ای (Pie)
+
+```python
+sizes = [40,30,20,10]
+labels = ['A','B','C','D']
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.show()
+```
+
+### 📉 نمودار پراکندگی (Scatter)
+
+```python
+x = np.random.rand(50)
+y = np.random.rand(50)
+
+plt.scatter(x, y, color='green')
+plt.show()
+```
+
+### 📊 هیستوگرام (Histogram)
+
+```python
+data = np.random.randn(1000)  # داده تصادفی
+plt.hist(data, bins=30, color='purple', alpha=0.7)
+plt.show()
+```
+
+---
+
+# 🔹 مرحله ۵ — تنظیمات محورها
+
+```python
+plt.plot(x, y)
+plt.xlim(0,6)      # محدودیت محور X
+plt.ylim(0,12)     # محدودیت محور Y
+plt.xticks([0,2,4,6])  # تیک‌های دلخواه روی محور X
+plt.yticks([0,5,10])
+plt.grid(True)     # شبکه‌بندی
+plt.show()
+```
+
+---
+
+# 🔹 مرحله ۶ — ساب‌پلات‌ها (چند نمودار در یک شکل)
+
+```python
+plt.subplot(1,2,1)   # (ردیف, ستون, شماره)
+plt.plot(x, y)
+plt.title("Linear")
+
+plt.subplot(1,2,2)
+plt.plot(x, y2)
+plt.title("Quadratic")
+
+plt.tight_layout()   # جلوگیری از تداخل
+plt.show()
+```
+
+---
+
+# 🔹 مرحله ۷ — استایل آماده
+
+```python
+plt.style.available[:5]   # نمایش چند استایل آماده
+plt.style.use('ggplot')   # انتخاب استایل
+
+plt.plot(x, y)
+plt.show()
+```
+
+---
+
+# 🔹 مرحله ۸ — ذخیره نمودار
+
+```python
+plt.plot(x, y)
+plt.savefig("plot.png", dpi=300, bbox_inches='tight')
+```
