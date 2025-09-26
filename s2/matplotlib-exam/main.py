@@ -55,14 +55,21 @@ import numpy as np
 # __________________________________________________________
 # pow chart
 
-x = list(range(-10, 11))
-y = np.multiply(x, x)
+# x = list(range(-10, 11))
+# y = np.multiply(x, x)
 
 plt.style.use("ggplot")
-plt.grid(True)
-plt.title("X^2=y")
-# print(plt.style.available[0:10])
+# plt.grid(True)
+# plt.title("X^2=y")
+# # print(plt.style.available[0:10])
 
-plt.plot(x,y)
+# plt.plot(x,y)
 
+# plt.show()
+
+
+# ____________________________________________________________
+# random histogram
+x = (np.random.rand(1000)*5).round(decimals=0)
+plt.hist(x=x,align="mid")
 plt.show()
