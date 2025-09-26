@@ -35,10 +35,20 @@ import numpy as np
 # ____________________________________________________________
 # pie chart
 
-x=[23,30,45,2]
-company=["apple","samsung","xm","other"]
+# x=[23,30,45,2]
+# company=["apple","samsung","xm","other"]
 
-plt.pie(x,labels=company, autopct='%1.1f%%')
-plt.title("phone companys in iran: ")
+# plt.pie(x,labels=company, autopct='%1.1f%%')
+# plt.title("phone companys in iran: ")
 
-plt.show()
+# plt.show()
+
+# ____________________________________________________________
+# scatter chart
+
+# x=np.random.rand(50)*100
+# y=np.random.rand(50)*100
+# plt.scatter(x,y,color="green")
+
+# plt.show()
+
