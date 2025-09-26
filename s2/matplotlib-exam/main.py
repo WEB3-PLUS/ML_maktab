@@ -17,16 +17,28 @@ import numpy as np
 # plt.legend()
 # plt.show()
 
-
+# ____________________________________________________________
 # bar chart
 
-langs = ["c#", "javascript", "c++", "java"]
-pop = [10, 70, 100, 45]
+# langs = ["c#", "javascript", "c++", "java"]
+# pop = [10, 70, 100, 45]
 
-plt.bar(langs, pop, color="purple")
+# plt.bar(langs, pop, color="purple")
 
-plt.xlabel("pop")
-plt.ylabel("langs")
-plt.title("chart of pop langs")
+# plt.xlabel("pop")
+# plt.ylabel("langs")
+# plt.title("chart of pop langs")
+
+# plt.show()
+
+
+# ____________________________________________________________
+# pie chart
+
+x=[23,30,45,2]
+company=["apple","samsung","xm","other"]
+
+plt.pie(x,labels=company, autopct='%1.1f%%')
+plt.title("phone companys in iran: ")
 
 plt.show()
