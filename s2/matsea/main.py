@@ -1,19 +1,17 @@
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import warnings
+import numpy as np
 
-warnings.filterwarnings("ignore")
+file_data_frame = pd.read_csv("tips.csv")
 
-# import matplotlib
+# print(file_data_frame["sex"].value_counts())
 
-# print(matplotlib.__version__)
+label_sex=file_data_frame["sex"].value_counts().keys()
+value_sex=np.array((file_data_frame["sex"].value_counts(normalize=True).values*100),dtype="float32")
+
+# print(value_sex)
 
 
-def sniplot():
-    x = np.linspace(0, 14, 100)
-    for i in range(1, 7):
-        plt.plot(x, np.sin(x+i * 0.5)*(7-i))
-    
-         
+plt.pie(value_sex,labels=label_sex,autopct='%1.1f%%')
+plt.title("chart of tips by sex: ")
+plt.show()
