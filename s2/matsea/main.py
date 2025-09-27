@@ -16,9 +16,18 @@ value_sex=np.array((file_data_frame["sex"].value_counts(normalize=True).values*1
 # plt.title("chart of tips by sex: ")
 
 
-label_day=file_data_frame.day.value_counts().keys()
-value_day=file_data_frame.day.value_counts()
+# label_day=file_data_frame.day.value_counts().keys()
+# value_day=file_data_frame.day.value_counts()
 
-plt.bar(label_day,value_day)
+# plt.bar(label_day,value_day)
+
+tip_value=file_data_frame["tip"].value_counts().values
+label_tip=file_data_frame["tip"].value_counts().keys()
+
+
+# plt.hist(tip_value)
+
+plt.scatter(tip_value,label_tip)
+
 
 plt.show()
