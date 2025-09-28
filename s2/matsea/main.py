@@ -6,8 +6,8 @@ file_data_frame = pd.read_csv("tips.csv")
 
 # print(file_data_frame["sex"].value_counts())
 
-label_sex=file_data_frame["sex"].value_counts().keys()
-value_sex=np.array((file_data_frame["sex"].value_counts(normalize=True).values*100),dtype="float32")
+# label_sex=file_data_frame["sex"].value_counts().keys()
+# value_sex=np.array((file_data_frame["sex"].value_counts(normalize=True).values*100),dtype="float32")
 
 # print(value_sex)
 
@@ -21,13 +21,13 @@ value_sex=np.array((file_data_frame["sex"].value_counts(normalize=True).values*1
 
 # plt.bar(label_day,value_day)
 
-tip_value=file_data_frame["tip"].value_counts().values
-label_tip=file_data_frame["tip"].value_counts().keys()
+# tip_value=file_data_frame["tip"].value_counts().values
+# label_tip=file_data_frame["tip"].value_counts().keys()
 
 
 # plt.hist(tip_value)
 
-plt.scatter(tip_value,label_tip)
+# plt.scatter(tip_value,label_tip)
 
 
-plt.show()
+# plt.show()
